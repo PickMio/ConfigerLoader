@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+    <drop>
+	<id>160001</id>
+	<desc>积分</desc>	
+	<rate>30</rate>
+	<detail_rate>170001, 35;170002, 30;170003, 20;170004, 10;170005, 5;</detail_rate>
+	</drop>
+	
+	<drop>
+	<id>160002</id>
+	<desc>红包</desc>	
+	<rate>30</rate>
+	<detail_rate>170006, 55;170007, 25;170008, 10;170009, 5;170010, 3;170011, 2;</detail_rate>
+	</drop>
+	
+	<drop>
+	<id>160003</id>
+	<desc>道具</desc>	
+	<rate>40</rate>
+	<detail_rate>170012, 50;170013, 10;170014, 10;170015, 10;170016, 10;170017, 10;</detail_rate>
+	</drop>	
+	
+</root>
+
