@@ -9,6 +9,69 @@
 using namespace std;
 using namespace pugi;
 
+typedef struct tagDetailRate
+{
+    int itemID;
+    int count;
+}DetailRate;
+
+class Utils
+{
+public:
+/************************************************************************/
+/* 输入const字符串指针str和分隔符s,返回用s隔开的字符串vector                                                                     */
+/************************************************************************/
+    static int split(const char* str, char s,vector<string>&ret)
+    {
+    char buff[1024];
+    char tmp[1024];
+    memset(buff, 0, sizeof(buff));
+    memset(tmp, 0, sizeof(buff));
+    strncpy(buff, str, 1024);
+    int len = strlen(str);
+    if(buff[len - 1] != s)
+    {
+        buff[len++] = s;//这里可能会溢出,最后的分号忘记写了
+    }
+    for (int c = 0,k = 0; c <len ;c++)
+    {
+        if (buff[c] != s)
+	{
+            tmp[k++] = buff[c];
+	    continue;
+	}
+	tmp[k] = '\0';
+	ret.push_back(tmp);
+	k = 0;
+    }
+
+    return 0;
+    }
+    
+    static int parse_detail_rate(const char *src, vector<DetailRate>&ret)
+    {
+        
+        vector<string> tmp;
+        vector<string> tmp2;
+        split(src, ';', tmp);
+        DetailRate dr = {0};
+        for(vector<string>::iterator it=tmp.begin(); it != tmp.end(); ++it)
+        {
+             split(it->c_str(), ',', tmp2);
+             dr.itemID = atoi(tmp2.at(0).c_str());
+             dr.count = atoi(tmp2.at(1).c_str());
+             cout << dr.itemID << "id parse ok" << endl;
+             cout << dr.count << "count parse ok" << endl;
+      
+             ret.push_back(dr);
+        }
+
+
+    }
+
+};
+
+
 void parse_xml(const string name)
 {
 	xml_document doc;
@@ -130,6 +193,7 @@ public:
         if(iter == m_ItemMap.end())
         {
             //打印错误信息
+            cout << "mei zhaodao a!" << endl;
             return NULL;
         }
         
@@ -168,13 +232,13 @@ public:
 	}
 	xml_node node = doc.child("root");
 	node = node.child(this->m_FileName.c_str());
-
-	for(xml_node data=node.first_child();data; data=data.next_sibling())
-        {
-            cout << __LINE__ << "set m_ItemInfo" << endl;
-            m_ItemInfo = this->OnCreate(); //这里为什么没有在子类执行?
-            m_ItemInfo->parse_xml(data);
-            cout << __LINE__ <<"parse ok" << endl;
+        xml_node parent = node;
+        for(;parent;parent = parent.next_sibling()){
+            m_ItemInfo = this->OnCreate();
+	    for(xml_node data=parent.first_child();data; data=data.next_sibling())
+            {
+                m_ItemInfo->parse_xml(data);
+            }
             m_ConfigerMgr->add(m_ItemInfo);
         }
     }       
@@ -200,12 +264,14 @@ public:
         }
         if(0 == strcmp(data.name(), "detail_rate"))
         {
-            m_DetailRate = data.child_value();
+            //cout << "detial " << data.child_value() << endl;         
+            Utils::parse_detail_rate(data.child_value(), m_DetailRate);
         }
 
     }   
     int m_Rate;
-    string m_DetailRate;
+    //string m_DetailRate;
+    vector<DetailRate> m_DetailRate;
 
 };
 
@@ -226,44 +292,7 @@ public:
     DropLoader(ConfigerMgr *mgr, char* file):BaseLoader(mgr, file){}
     virtual BaseItem* OnCreate()
     {
-        cout << "create drop info success!" << endl;
         return new DropInfo();
-    }
-
-};
-
-
-class Utils
-{
-public:
-/************************************************************************/
-/* 输入const字符串指针str和分隔符s,返回用s隔开的字符串vector                                                                     */
-/************************************************************************/
-    static int split(const char* str, char s,vector<string>&ret)
-    {
-    char buff[1024];
-    char tmp[1024];
-    memset(buff, 0, sizeof(buff));
-    memset(tmp, 0, sizeof(buff));
-    strncpy(buff, str, 1024);
-    int len = strlen(str);
-    if(buff[len - 1] != s)
-    {
-        buff[len++] = s;//这里可能会溢出,最后的分号忘记写了
-    }
-    for (int c = 0,k = 0; c <len ;c++)
-    {
-        if (buff[c] != s)
-	{
-            tmp[k++] = buff[c];
-	    continue;
-	}
-	tmp[k] = '\0';
-	ret.push_back(tmp);
-	k = 0;
-    }
-
-    return 0;
     }
 
 };
@@ -283,7 +312,21 @@ void test()
 */
     ConfigerMgr *mgr = new ConfigerMgr();
     BaseLoader *dropLoader = new DropLoader(mgr, "drop");
+    delete dropLoader;
+    dropLoader = NULL;
+   
+    dropLoader = new DropLoader(mgr, "drop");
     dropLoader->LoadXml();
+
+    DropInfo *info = (DropInfo*)   mgr->find(160001);
+    if(info == NULL)
+    {
+        cout << "why can not i find??"<< endl;
+        return;
+    }
+    cout <<"cout detail is:" << info->m_DetailRate[0].itemID << endl;
+    cout << "cout is:" << info->m_DetailRate[0].count << endl;
+    cout <<"m_rate is:" <<  info->m_Rate << endl;
 }
 
 

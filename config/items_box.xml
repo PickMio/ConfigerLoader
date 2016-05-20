@@ -2,59 +2,54 @@
 <root>
     <items_box>
 		<id>170001</id>
-		<des>100-199积分</des>
-		<rate>35</rate>		
+		<des></des>
 		<award_from>221</award_from>
 		<award_type>1</award_type>
 		<award_val>0</award_val>
-		<award_count>100,199</award_count>
+		<award_count_range>100,199</award_count_range>
 		<award_reserve>0</award_reserve>	
 	</items_box>
 	
 	<items_box>
 		<id>170002</id>	
-		<des>200-399积分</des>
-		<rate>30</rate>		
+		<des></des>
 		<award_from>221</award_from>
 		<award_type>1</award_type>
 		<award_val>0</award_val>
-		<award_count>200,399</award_count>
+		<award_count_range >200,399</award_count_range>
 		<award_reserve>0</award_reserve>	
 	</items_box>
 	
 	
 	<items_box>
 		<id>170003</id>	
-		<des>400-599积分</des>
-		<rate>20</rate>		
+		<des></des>
 		<award_from>221</award_from>
 		<award_type>1</award_type>
 		<award_val>0</award_val>
-		<award_count>400,599</award_count>
+		<award_count_range >400,599</award_count_range>
 		<award_reserve>0</award_reserve>	
 	</items_box>
 	
 	
 	<items_box>
 		<id>170004</id>		
-		<des>600-799积分</des>
-		<rate>10</rate>		
+		<des></des>
 		<award_from>221</award_from>
 		<award_type>1</award_type>
 		<award_val>0</award_val>
-		<award_count>600,799</award_count>
+		<award_count_range >600,799</award_count_range>
 		<award_reserve>0</award_reserve>	
 	</items_box>
 	
 	
 	<items_box>
 		<id>170005</id>	
-		<des>800-1000积分</des>		
-		<rate>5</rate>		
+		<des></des>		
 		<award_from>221</award_from>
 		<award_type>1</award_type>
 		<award_val>0</award_val>
-		<award_count>800,1000</award_count>
+		<award_count_range >800,1000</award_count_range>
 		<award_reserve>0</award_reserve>	
 	</items_box>
 	
@@ -62,70 +57,53 @@
 	
 	<items_box>
 		<id>170006</id>	
-		<des>1-5分红包</des>		
-		<rate>55</rate>		
+		<des></des>		
 		<award_from>221</award_from>
 		<award_type>6</award_type>
 		<award_val>0</award_val>
-		<award_count>1,5</award_count>
+		<award_count_range >1,5</award_count_range>
 		<award_reserve>0</award_reserve>	
 	</items_box>
 	
 	<items_box>
 		<id>170007</id>	
-		<des>6-10分红包</des>		
-		<rate>25</rate>		
+		<des></des>		
 		<award_from>221</award_from>
 		<award_type>6</award_type>
 		<award_val>0</award_val>
-		<award_count>6,10</award_count>
+		<award_count_range >6,10</award_count_range>
 		<award_reserve>0</award_reserve>	
 	</items_box>
 	
 	
 	<items_box>
 		<id>170008</id>
-		<des>11-20分红包</des>
-		<rate>10</rate>		
+		<des></des>
 		<award_from>221</award_from>
 		<award_type>6</award_type>
 		<award_val>0</award_val>
-		<award_count>11,20</award_count>
+		<award_count_range >11,20</award_count_range>
 		<award_reserve>0</award_reserve>	
 	</items_box>
 	
 	
 	<items_box>
 		<id>170009</id>	
-		<des>21-40分红包</des>
-		<rate>5</rate>		
+		<des></des>
 		<award_from>221</award_from>
 		<award_type>6</award_type>
 		<award_val>0</award_val>
-		<award_count>21,40</award_count>
-		<award_reserve>0</award_reserve>	
-	</items_box>
-	
-	
-	<items_box>
-		<id>170010</id>	
-		<des>41-50分红包</des>
-		<rate>3</rate>		
-		<award_from>221</award_from>
-		<award_type>6</award_type>
-		<award_val>0</award_val>
-		<award_count>41,50</award_count>
+		<award_count_range >41,50</award_count_range>
 		<award_reserve>0</award_reserve>	
 	</items_box>	
 	
 	<items_box>
 		<id>170011</id>	
-		<des>50-100分红包</des>
-		<rate>2</rate>		
+		<des></des>
 		<award_from>221</award_from>
 		<award_type>6</award_type>
 		<award_val>0</award_val>
-		<award_count>51,100</award_count>
+		<award_count_range >51,100</award_count_range>
 		<award_reserve>0</award_reserve>	
 	</items_box>	
 	
@@ -135,70 +113,64 @@
 	
 	<items_box>
 		<id>170012</id>	
-		<des>1个喇叭</des>
-		<rate>50</rate>		
+		<des></des>
 		<award_from>221</award_from>
 		<award_type>3</award_type>
 		<award_val>10000</award_val>
-		<award_count>1,1</award_count>
+		<award_count_range >1,1</award_count_range>
 		<award_reserve>0</award_reserve>	
 	</items_box>
 	
 	<items_box>
 		<id>170013</id>		
-		<des>1天头像</des>
-		<rate>10</rate>		
+		<des></des>
 		<award_from>221</award_from>
 		<award_type>3</award_type>
 		<award_val>1002</award_val>
-		<award_count>0,0</award_count>
+		<award_count_range >0,0</award_count_range>
 		<award_reserve>24</award_reserve>	
 	</items_box>
 	
 	
 	<items_box>
 		<id>170014</id>	
-		<des>1天计牌器</des>		
-		<rate>10</rate>		
+		<des></des>		
 		<award_from>221</award_from>
 		<award_type>3</award_type>
 		<award_val>10016</award_val>
-		<award_count>0,0</award_count>
+		<award_count_range >0,0</award_count_range>
 		<award_reserve>24</award_reserve>	
 	</items_box>
 	
 	
 	<items_box>
 		<id>170015</id>	
-		<des>1天金牌</des>		
-		<rate>10</rate>		
+		<des></des>		
 		<award_from>221</award_from>
 		<award_type>3</award_type>
 		<award_val>10001</award_val>
-		<award_count>0,0</award_count>
+		<award_count_range >0,0</award_count_range>
 		<award_reserve>24</award_reserve>	
 	</items_box>
 	
 	
 	<items_box>
 		<id>170016</id>
-		<des>1张加倍卡</des>		
-		<rate>10</rate>		
+		<des></des>		
 		<award_from>221</award_from>
 		<award_type>3</award_type>
 		<award_val>10015</award_val>
-		<award_count>1,1</award_count>
+		<award_count_range >1,1</award_count_range>
 		<award_reserve>0</award_reserve>	
 	</items_box>	
 	
 	<items_box>
 		<id>170017</id>	
-		<des>1天表情包</des>		
-		<rate>10</rate>		
+		<des></des>		
 		<award_from>221</award_from>
 		<award_type>3</award_type>
 		<award_val>10017</award_val>
-		<award_count>0,0</award_count>
+		<award_count_range >0,0</award_count_range>
 		<award_reserve>24</award_reserve>	
 	</items_box>
 	
